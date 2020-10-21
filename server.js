@@ -1,5 +1,6 @@
-//  This is a simple NodeJS server with ExpressJS and the npm module ws to implement websocket.  It is intended to be very simple,
-//  nothing more than I need to learn how to set up a server to work with websockets
+//  This is a simple NodeJS server with ExpressJS and the npm module ws to implement a websocket server.  It is intended to be very
+//  simple, nothing more than I need to learn how to set up an ExpressJS server that works with websockets and to learn the basics
+//  of working with websockets.
 
 const chalk = require("chalk");
 const express = require("express");
