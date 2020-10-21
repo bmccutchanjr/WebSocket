@@ -1,0 +1,52 @@
+*
+{   box-sizing: border-box;
+}
+
+:root
+{
+    --color: black;
+    --page-width: 90%;
+}
+
+body,
+html
+{
+    color: var(--color);
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    height: 100%;
+    min-height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper
+{
+    min-height: 100%;
+    margin: 0px auto;
+    margin-bottom: -30px;
+    width: var(--page-width);
+}
+
+.push
+{
+    height: 40px;
+}
+
+footer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30px;
+    margin: 0px;
+    width: 100%;
+}
+
+.inner-footer
+{
+    margin: 0px auto;
+    text-align: left;
+    width: var(--page-width);
+}
