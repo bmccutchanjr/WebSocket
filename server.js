@@ -4,20 +4,40 @@
 
 const chalk = require("chalk");
 const express = require("express");
-const websocket = require("ws");
+//  01  const websocket = require("ws");
+//  01  begins
+const socket = require("./socket.js");
+//  01  begins
 
 const app = express();
 app.use (express.urlencoded ( { extended: true } ) );
 app.use (express.json());
-app.use ("/", require("../routes/routes.js"));
+app.use ("/", require("./routes/routes.js"));
 
 const server = app.listen (8080, () =>
 {
     console.log ("HTTP server is up and running");
 });
 
-const socket = websocket.Server ( { server } );
-socket.on ("connection", parm =>
-{
+//  01  const socket = new websocket.Server ( { server } );
+//  01  socket.on ("connection", ws =>
+//  01  {
+//  01  console.log ("on connection");
+//  01      ws.on ("listening", () =>
+//  01      {
+//  01          console.log ("WebSocket server is up and running");
+//  01      });
+//  01  
+//  01      ws.on ("message", function (message)
+//  01      {
+//  01          console.log ("message: " + message);
+//  01          ws.send ("received " + message);
+//  01          ws.send ("sending " + message);
+//  01      });
+//  01  });
+socket.createServer (server);
 
-});
+setTimeout (() =>
+{
+    socket.send ("WOOHOO");
+}, 10000);
