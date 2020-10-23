@@ -1,4 +1,6 @@
-const ws = new WebSocket ("ws://localhost:8080");
+if (!WebSocket) alert ("WebSocket is not supported")
+
+const ws = new WebSocket ("ws://192.168.43.9:8080");
 
 ws.onopen = function (event)
 {
